@@ -12,7 +12,11 @@
 
 # About
 
-This is a Markdown starter project for Maizzle, it shows how to generate your newsletter templates from Markdown files.
+This is a Markdown starter project for Maizzle, it shows how to generate HTML emails from Markdown files.
+
+See the detailed guide for more information:
+
+[How to create an HTML email newsletter from Markdown files](https://maizzle.com/guides/markdown-emails)
 
 ## Getting Started
 
