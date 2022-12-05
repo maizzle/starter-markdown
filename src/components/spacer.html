@@ -1,0 +1,20 @@
+<script props>
+  /*
+  | `msoHeight` can only be used if `height` is also defined,
+  | otherwise use classes for both.
+  */
+  module.exports = {
+    height: props.height,
+    msoHeight: props.msoHeight,
+  }
+</script>
+
+<if condition="height">
+  <div
+    style="line-height: {{ height }}; {{ msoHeight ? `mso-line-height-alt: ${msoHeight}` : '' }};"
+    role="separator"
+  >&zwnj;</div>
+</if>
+<else>
+  <div role="separator">&zwnj;</div>
+</else>

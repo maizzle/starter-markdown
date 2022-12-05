@@ -1,0 +1,29 @@
+/*
+ * Here is where you can add your global markdown CSS styles.
+ *
+ * This is preferred over using the @tailwindcss/typography
+ * plugin, because that plugin contains selectors
+ * that are not supported in HTML emails.
+*/
+
+h1 {
+  @apply text-3xl leading-9;
+}
+
+h3 {
+  @apply text-lg leading-6 font-medium;
+  @apply m-0 mb-4;
+}
+
+p {
+  @apply m-0 mb-8;
+}
+
+ul {
+  @apply leading-6;
+}
+
+img {
+  @apply max-w-full leading-full align-middle;
+  border: 0;
+}

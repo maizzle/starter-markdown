@@ -1,0 +1,84 @@
+<!DOCTYPE {{{ page.doctype || 'html' }}}>
+<html lang="{{ page.language || 'en' }}" xmlns:v="urn:schemas-microsoft-com:vml">
+<head>
+  <meta charset="{{ page.charset || 'utf-8' }}">
+  <meta name="x-apple-disable-message-reformatting">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="format-detection" content="telephone=no, date=no, address=no, email=no, url=no">
+  <!--[if mso]>
+  <noscript>
+    <xml>
+      <o:OfficeDocumentSettings xmlns:o="urn:schemas-microsoft-com:office:office">
+        <o:PixelsPerInch>96</o:PixelsPerInch>
+      </o:OfficeDocumentSettings>
+    </xml>
+  </noscript>
+  <style>
+    td,th,div,p,a,h1,h2,h3,h4,h5,h6 {font-family: "Segoe UI", sans-serif; mso-line-height-rule: exactly;}
+  </style>
+  <![endif]-->
+  <if condition="page.title">
+    <title>{{{ page.title }}}</title>
+  </if>
+  <style>
+    {{{ page.css }}}
+  </style>
+  <stack name="head"></stack>
+</head>
+<body class="m-0 p-0 w-full [word-break:break-word] [-webkit-font-smoothing:antialiased] {{ page.bodyClass || 'bg-emerald-100' }}">
+  <if condition="page.preheader">
+    <div class="hidden">
+      {{{ page.preheader }}}
+      <each loop="item in Array.from(Array(150))">&#847; </each>
+    </div>
+  </if>
+
+  <div
+    align="center"
+    role="article"
+    aria-roledescription="email"
+    lang="{{ page.language || 'en' }}"
+    class="{{ page.bodyClass || 'bg-emerald-100' }}"
+    aria-label="{{{ page.title || '' }}}"
+  >
+    <x-spacer height="40px"></x-spacer>
+
+    <div class="text-center">
+      <img src="maizzle.png" alt="Maizzle" width="140">
+    </div>
+
+    <x-spacer height="40px"></x-spacer>
+
+    <table class="font-sans">
+      <tr>
+        <td class="w-150 max-w-full py-8 bg-white rounded-xl">
+          <table class="w-full">
+            <tr>
+              <td class="px-8 sm:px-4 text-slate-600 text-base leading-6">
+                <slot:template></slot:template>
+              </td>
+            </tr>
+          </table>
+        </td>
+      </tr>
+      <tr role="separator">
+        <td class="leading-10">&zwnj;</td>
+      </tr>
+      <tr>
+        <td class="px-8 sm:px-4 text-sm text-emerald-500">
+          <p class="m-0 mb-4">
+            Maizzle Markdown, 101 OSS Road
+          </p>
+
+          <p class="m-0 mb-4">
+            If you no longer wish to receive these emails,
+            you can <a href="https://maizzle.com" class="text-emerald-500 hover:text-emerald-600">unsubscribe</a>.
+          </p>
+        </td>
+      </tr>
+    </table>
+
+    <x-spacer height="40px"></x-spacer>
+  </div>
+</body>
+</html>

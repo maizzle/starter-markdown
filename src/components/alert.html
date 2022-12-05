@@ -1,0 +1,25 @@
+<script props>
+  module.exports = {
+    type: {
+      info: 'bg-blue-100 text-blue-600',
+      warning: 'bg-amber-100 text-amber-600',
+      danger: 'bg-rose-100 text-rose-600',
+    }[props.type] || 'bg-blue-100 text-blue-600'
+  }
+</script>
+
+<table class="w-full mb-8">
+  <tr>
+    <td
+      attributes
+      class="py-3 px-4 rounded-lg {{ type }}"
+    >
+      <!--
+        For markdown to be rendered properly when passed to the component,
+        the closing tags following </content> must not be indented,
+        or they will show up in the rendered HTML.
+      -->
+      <content></content>
+</td>
+</tr>
+</table>
