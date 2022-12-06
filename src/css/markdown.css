@@ -7,23 +7,83 @@
 */
 
 h1 {
-  @apply text-3xl leading-9;
+  @apply text-3xl leading-9 text-slate-900;
+  @apply sm:text-2xl sm:leading-8;
+}
+
+h2 {
+  @apply text-2xl leading-8 text-slate-900;
+  @apply sm:text-xl sm:leading-7;
 }
 
 h3 {
-  @apply text-lg leading-6 font-medium;
+  @apply text-xl leading-7 text-slate-900;
   @apply m-0 mb-4;
+  @apply sm:text-lg sm:leading-6;
+}
+
+h4 {
+  @apply text-lg leading-6 text-slate-900;
+  @apply sm:text-base sm:leading-5;
+}
+
+h5 {
+  @apply text-base leading-5 text-slate-900;
+  @apply sm:text-sm;
+}
+
+h6 {
+  @apply text-base leading-5 text-slate-900 uppercase;
+  @apply sm:text-sm;
 }
 
 p {
+  @apply text-base leading-6 text-slate-600;
   @apply m-0 mb-8;
 }
 
-ul {
-  @apply leading-6;
+ul, ol {
+  @apply leading-6 text-slate-600;
+}
+
+blockquote {
+  p {
+    @apply m-0 text-lg leading-7;
+  }
+
+  @apply [border-left:4px_solid_#6366f1];
+  @apply m-0 mb-8 pl-4;
+}
+
+hr {
+  @apply border-0 h-px text-slate-300 bg-slate-300;
+  @apply my-8;
 }
 
 img {
   @apply max-w-full leading-full align-middle;
   border: 0;
+}
+
+a {
+  @apply text-blue-600 underline;
+}
+
+pre {
+  @apply p-6 mb-6 overflow-auto whitespace-pre rounded-lg;
+  @apply font-mono text-base text-left;
+  @apply text-slate-300 bg-[#0F172A];
+  background-image: linear-gradient(to bottom, #0F172A 25%, #17223c);
+  hyphens: none;
+  tab-size: 2;
+  word-break: normal;
+  word-spacing: normal;
+  word-wrap: normal;
+}
+
+/* Inline code */
+:not(pre) > code {
+  @apply px-1.5 py-0.5 rounded;
+  @apply text-sm whitespace-normal;
+  @apply text-pink-500 bg-slate-50 border border-solid border-slate-200;
 }

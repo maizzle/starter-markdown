@@ -1,18 +1,21 @@
 ---
 layout: secondary
-title: "Newsletter #2"
+title: "Edition #2: Using a custom layout"
 ---
 
-# {{ page.title }} {.m-0 .mb-10 .text-slate-900}
+# {{ page.title }} {.m-0 .mb-10}
 
-This edition uses a custom layout that uses a different background color and also includes a footer. You should always include a footer with your address and unsubscribe link :)
+This edition uses a custom layout: the header shows a different logo image, which is now also left-aligned instead of centered.
 
-It supports all the framework features you already know and love:
+This is done via the `layout` property in the front matter:
 
-- Tailwind CSS
-- components
-- expressions
-- conditionals, loops etc.
+```yaml
+---
+layout: secondary
+---
+```
+
+The value of `layout` must match one of the file names inside the `src/layouts` directory.
 
 Cheers,\
 The Maizzle Team

@@ -25,7 +25,7 @@
   </style>
   <stack name="head"></stack>
 </head>
-<body class="m-0 p-0 w-full [word-break:break-word] [-webkit-font-smoothing:antialiased] {{ page.bodyClass || 'bg-emerald-100' }}">
+<body class="m-0 p-0 w-full [word-break:break-word] [-webkit-font-smoothing:antialiased] {{ page.bodyClass || 'bg-[#0F172A]' }}">
   <if condition="page.preheader">
     <div class="hidden">
       {{{ page.preheader }}}
@@ -38,14 +38,24 @@
     role="article"
     aria-roledescription="email"
     lang="{{ page.language || 'en' }}"
-    class="{{ page.bodyClass || 'bg-emerald-100' }}"
+    class="sm:px-4 {{ page.bodyClass || 'bg-[#0F172A]' }}"
     aria-label="{{{ page.title || '' }}}"
   >
     <x-spacer height="40px"></x-spacer>
 
-    <div class="text-center">
-      <img src="maizzle.png" width="140" alt="Maizzle">
-    </div>
+    <table>
+      <tr>
+        <td class="w-150 max-w-full">
+          <table class="w-full">
+            <tr>
+              <td class="px-8 sm:px-4">
+                <img src="logo.png" width="198" alt="Maizzle">
+              </td>
+            </tr>
+          </table>
+        </td>
+      </tr>
+    </table>
 
     <x-spacer height="40px"></x-spacer>
 
@@ -65,15 +75,22 @@
         <td class="leading-10">&zwnj;</td>
       </tr>
       <tr>
-        <td class="px-8 sm:px-4 text-sm text-emerald-500">
-          <p class="m-0 mb-4">
-            Maizzle Markdown, 101 OSS Road
-          </p>
-
-          <p class="m-0 mb-4">
-            If you no longer wish to receive these emails,
-            you can <a href="https://maizzle.com" class="text-emerald-500 hover:text-emerald-600">unsubscribe</a>.
-          </p>
+        <td class="px-8 sm:px-4">
+          <table class="w-full">
+            <tr>
+              <td class="align-top sm:block sm:w-full sm:pb-8">
+                <img src="insignia.png" width="60" class="sm:w-12" alt="Maizzle">
+              </td>
+              <td class="sm:block sm:w-full px-8 sm:px-0">
+                <p class="m-0 mb-2 text-sm text-slate-400">
+                  Maizzle Markdown, 101 OSS Road.
+                  <br>
+                  If you no longer wish to receive these emails,
+                  you can <a href="https://maizzle.com" class="text-slate-400 hover:text-slate-300">unsubscribe</a>.
+                </p>
+              </td>
+            </tr>
+          </table>
         </td>
       </tr>
     </table>
