@@ -1,0 +1,36 @@
+<script props>
+  module.exports = {
+    align: props.align,
+    href: props.href,
+    msoFill: props.msoFill || '#4f46e5',
+  }
+</script>
+
+<div align="{{ align }}">
+  <if condition="href">
+  <!--[if mso]>
+  <v:roundrect arcsize="10%" style="height: 44px; mso-wrap-style: none;" stroke="f" fillcolor="{{ msoFill }}">
+  <![endif]-->
+  <a
+    attributes
+    href="{{ href }}"
+    class="inline-block py-3.5 px-7 text-sm leading-none font-semibold rounded text-slate-50 bg-indigo-600 hover:bg-indigo-700 [text-decoration:none]"
+  >
+    <outlook>
+      <i class="tracking-3 mso-font-width-[-100%] mso-text-raise-1.5" hidden>&nbsp;</i>
+    </outlook>
+    <span><content></content></span>
+    <outlook>
+      <i class="tracking-3 mso-font-width-[-100%]" hidden>&nbsp;</i>
+    </outlook>
+  </a>
+  <!--[if mso]>
+    </v:roundrect>
+  <![endif]-->
+  </if>
+  <else>
+    <div class="text-rose-500 font-mono">
+    <span class="italic"><content></content></span> button missing required <code>href</code> attribute.
+    </div>
+  </else>
+</div>
