@@ -22,7 +22,7 @@ module.exports = {
     },
   },
   inlineCSS: true,
-  shorthandInlineCSS: true,
+  shorthandCSS: true,
   removeUnusedCSS: true,
   prettify: true,
 }
