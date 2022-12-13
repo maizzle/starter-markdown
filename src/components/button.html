@@ -1,13 +1,12 @@
 <script props>
   module.exports = {
     align: props.align,
-    href: props.href,
+    href: props.href || 'https://maizzle.com',
     msoFill: props.msoFill || '#4f46e5',
   }
 </script>
 
 <div align="{{ align }}">
-  <if condition="href">
   <!--[if mso]>
   <v:roundrect arcsize="10%" style="height: 44px; mso-wrap-style: none;" stroke="f" fillcolor="{{ msoFill }}">
   <![endif]-->
@@ -27,10 +26,4 @@
   <!--[if mso]>
     </v:roundrect>
   <![endif]-->
-  </if>
-  <else>
-    <div class="text-rose-500 font-mono">
-    <span class="italic"><content></content></span> button missing required <code>href</code> attribute.
-    </div>
-  </else>
 </div>
