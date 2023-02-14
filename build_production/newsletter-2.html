@@ -119,19 +119,19 @@
       .sm-block {
         display: block !important;
       }
-      .sm-w-full {
-        width: 100% !important;
-      }
       .sm-w-12 {
         width: 48px !important;
       }
-      .sm-px-4 {
-        padding-left: 16px !important;
-        padding-right: 16px !important;
+      .sm-w-full {
+        width: 100% !important;
       }
       .sm-px-0 {
         padding-left: 0 !important;
         padding-right: 0 !important;
+      }
+      .sm-px-4 {
+        padding-left: 16px !important;
+        padding-right: 16px !important;
       }
       .sm-pb-8 {
         padding-bottom: 32px !important;
@@ -139,7 +139,7 @@
     }
   </style>
 </head>
-<body style="word-break: break-word; -webkit-font-smoothing: antialiased; margin: 0; width: 100%; background-color: #0F172A; padding: 0">
+<body style="-webkit-font-smoothing: antialiased; word-break: break-word; margin: 0; width: 100%; background-color: #0F172A; padding: 0">
   <div align="center" role="article" aria-roledescription="email" lang="en" class="sm-px-4" aria-label="Edition #2: Using a custom layout" style="background-color: #0F172A">
     <div style="line-height: 40px" role="separator">&zwnj;</div>
     <table cellpadding="0" cellspacing="0" role="presentation">
@@ -165,10 +165,10 @@
                 <h1 style="font-size: 30px; line-height: 36px; color: #0f172a; margin: 0 0 40px">Edition #2: Using a custom layout</h1>
                 <p style="font-size: 16px; line-height: 24px; color: #475569; margin: 0 0 32px">This edition uses a custom layout: the header shows a different logo image, which is now also left-aligned instead of centered.</p>
                 <p style="font-size: 16px; line-height: 24px; color: #475569; margin: 0 0 32px;">This is done via the <code style="border-radius: 4px; padding: 2px 6px; white-space: normal; font-size: 14px; border: 1px solid #e2e8f0; background-color: #f8fafc; color: #ec4899;">layout</code> property in the front matter:</p>
-                <pre style="margin-bottom: 24px; overflow: auto; white-space: pre; border-radius: 8px; padding: 24px; text-align: left; font-family: ui-monospace, Menlo, Consolas, monospace; font-size: 16px; background-color: #0F172A; color: #cbd5e1; background-image: linear-gradient(to bottom, #0F172A 25%, #17223c); hyphens: none; tab-size: 2; word-break: normal; word-spacing: normal; word-wrap: normal"><code class="language-yaml">---
-layout: secondary
----
-</code></pre>
+                <pre style="margin-bottom: 24px; overflow: auto; white-space: pre; border-radius: 8px; padding: 24px; text-align: left; font-family: ui-monospace, Menlo, Consolas, monospace; font-size: 16px; color: #cbd5e1; hyphens: none; tab-size: 2; word-break: normal; word-spacing: normal; word-wrap: normal; background-color: #292D3E" tabindex="0"><code><span><span style="color: #FFCB6B">---</span></span>
+<span><span style="color: #F07178">layout</span><span style="color: #89DDFF">:</span><span style="color: #A6ACCD"> </span><span style="color: #C3E88D">secondary</span></span>
+<span><span style="color: #FFCB6B">---</span></span>
+<span></span></code></pre>
                 <p style="font-size: 16px; line-height: 24px; color: #475569; margin: 0 0 32px;">The value of <code style="border-radius: 4px; padding: 2px 6px; white-space: normal; font-size: 14px; border: 1px solid #e2e8f0; background-color: #f8fafc; color: #ec4899;">layout</code> must match one of the file names inside the <code style="border-radius: 4px; padding: 2px 6px; white-space: normal; font-size: 14px; border: 1px solid #e2e8f0; background-color: #f8fafc; color: #ec4899;">src/layouts</code> directory.</p>
                 <p style="font-size: 16px; line-height: 24px; color: #475569; margin: 0 0 32px;">Cheers,<br>
                   The Maizzle Team</p>
