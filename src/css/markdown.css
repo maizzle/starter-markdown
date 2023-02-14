@@ -73,8 +73,7 @@ a {
 pre {
   @apply p-6 mb-6 overflow-auto whitespace-pre rounded-lg;
   @apply font-mono text-base text-left;
-  @apply text-slate-300 bg-[#0F172A];
-  background-image: linear-gradient(to bottom, #0F172A 25%, #17223c);
+  @apply text-slate-300;
   hyphens: none;
   tab-size: 2;
   word-break: normal;

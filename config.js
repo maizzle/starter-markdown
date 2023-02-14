@@ -10,6 +10,7 @@
 */
 
 const fm = require('front-matter')
+const shiki = require('shiki')
 
 module.exports = {
   baseURL: {
@@ -37,6 +38,22 @@ module.exports = {
     ]
   },
   events: {
+    async beforeCreate(config) {
+      const highlighter = await shiki.getHighlighter({
+        theme: 'material-theme-palenight',
+      })
+
+      config = Object.assign(config, {
+        markdown: {
+          markdownit: {
+            highlight: (code, lang) => {
+              lang = lang || 'html'
+              return highlighter.codeToHtml(code, { lang })
+            }
+          }
+        }
+      })
+    },
     beforeRender(html) {
       const { attributes, body } = fm(html)
       const layout = attributes.layout || 'main'
