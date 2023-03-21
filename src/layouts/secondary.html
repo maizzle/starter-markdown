@@ -23,13 +23,13 @@
   <style>
     {{{ page.css }}}
   </style>
-  <stack name="head"></stack>
+  <stack name="head" />
 </head>
 <body class="m-0 p-0 w-full [word-break:break-word] [-webkit-font-smoothing:antialiased] {{ page.bodyClass || 'bg-[#0F172A]' }}">
   <if condition="page.preheader">
     <div class="hidden">
       {{{ page.preheader }}}
-      <each loop="item in Array.from(Array(150))">&#847; </each>
+      <each loop="item in Array.from(Array(150))">&#8199;&#65279;&#847; </each>
     </div>
   </if>
 
@@ -41,7 +41,7 @@
     class="sm:px-4 {{ page.bodyClass || 'bg-[#0F172A]' }}"
     aria-label="{{{ page.title || '' }}}"
   >
-    <x-spacer height="40px"></x-spacer>
+    <x-spacer height="40px" />
 
     <table>
       <tr>
@@ -57,7 +57,7 @@
       </tr>
     </table>
 
-    <x-spacer height="40px"></x-spacer>
+    <x-spacer height="40px" />
 
     <table class="font-sans">
       <tr>
@@ -65,14 +65,14 @@
           <table class="w-full">
             <tr>
               <td class="px-8 sm:px-4 text-base leading-6 text-slate-600">
-                <slot:template></slot:template>
+                <slot:template />
               </td>
             </tr>
           </table>
         </td>
       </tr>
       <tr role="separator">
-        <td class="leading-10">&zwnj;</td>
+        <td class="leading-10">&zwj;</td>
       </tr>
       <tr>
         <td class="px-8 sm:px-4">
@@ -95,7 +95,7 @@
       </tr>
     </table>
 
-    <x-spacer height="40px"></x-spacer>
+    <x-spacer height="40px" />
   </div>
 </body>
 </html>

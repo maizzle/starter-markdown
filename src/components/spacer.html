@@ -1,20 +1,21 @@
 <script props>
-  /*
-  | `msoHeight` can only be used if `height` is also defined,
-  | otherwise use classes for both.
-  */
+  // https://maizzle.com/docs/components/spacer
   module.exports = {
     height: props.height,
-    msoHeight: props.msoHeight,
+    msoHeight: props['mso-height'],
   }
 </script>
 
 <if condition="height">
   <div
-    style="line-height: {{ height }}; {{ msoHeight ? `mso-line-height-alt: ${msoHeight}` : '' }};"
+    attributes
     role="separator"
-  >&zwnj;</div>
+    style="
+      {{ height ? `line-height: ${height}` : '' }};
+      {{ msoHeight ? `mso-line-height-alt: ${msoHeight}` : '' }};
+    "
+  >&zwj;</div>
 </if>
 <else>
-  <div role="separator">&zwnj;</div>
+  <div role="separator">&zwj;</div>
 </else>
