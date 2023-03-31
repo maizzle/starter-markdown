@@ -60,9 +60,7 @@ module.exports = {
 
       return `
         <x-${layout}>
-          <fill:template>
-            <md>${body}</md>
-          </fill:template>
+          <md>${body}</md>
         </x-${layout}>`
     }
   },
