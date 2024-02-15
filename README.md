@@ -20,31 +20,13 @@ See the detailed guide for more information:
 
 ## Getting Started
 
-Clone this starter:
+Run this command:
 
 ```bash
-npx degit maizzle/starter-markdown my-project
+npx create-maizzle
 ```
 
-Install dependencies:
-
-```
-cd my-project
-
-npm install
-```
-
-Start local development:
-
-```
-npm run dev
-```
-
-Build emails for production:
-
-```
-npm run build
-```
+When prompted to select a Starter, choose Custom → Markdown.
 
 ## Documentation
 
