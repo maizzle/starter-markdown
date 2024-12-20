@@ -9,20 +9,22 @@
 |
 */
 
-module.exports = {
+/** @type {import('@maizzle/framework').Config} */
+export default {
   baseURL: {
-    url: 'images/',
+    url: '../images/',
     tags: ['img', 'source'],
   },
   build: {
-    templates: {
-      destination: {
-        path: 'build_production',
-      },
+    output: {
+      path: 'build_production',
+      extension: 'html',
     },
   },
-  inlineCSS: true,
-  shorthandCSS: true,
-  removeUnusedCSS: true,
+  css: {
+    inline: true,
+    purge: true,
+    shorthand: true,
+  },
   prettify: true,
 }

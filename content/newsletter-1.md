@@ -2,11 +2,11 @@
 title: "Edition #1: Using Markdown to create HTML emails with Maizzle"
 ---
 
-# {{ page.title }} {.m-0 .mb-10}
+# {{ page.title }} {.m-0 .mb-5}
 
 ![Spaceman on planet surface](feature.jpg){width=536}
 
-This is a ![Maizzle ](insignia.png){width=20}arkdown starter project that will help you get started with creating newsletter email templates from Markdown files in Maizzle.
+This is a ![M](insignia.png){width=20}arkdown starter project that will help you get started with creating newsletter email templates from Markdown files in Maizzle.
 
 It supports all the framework features you already know and love:
 
@@ -27,9 +27,11 @@ It supports all the framework features you already know and love:
 
 You can import Maizzle components right into your Markdown files. For example, the following button is a component:
 
-<x-button href="https://maizzle.com/guides/markdown-emails">
+<x-button href="https://maizzle.com/guides/markdown-emails" class="mb-8">
   Read the guide &rarr;
 </x-button>
+
+That's the `x-button` component, defined in `components/button.html`
 
 ***
 
