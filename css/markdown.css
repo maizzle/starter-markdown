@@ -7,38 +7,58 @@
 */
 
 h1 {
-  @apply text-3xl leading-9 text-slate-900;
-  @apply sm:text-2xl sm:leading-8;
+  @apply text-3xl/9 text-slate-900;
 }
 
 h2 {
-  @apply text-2xl leading-8 text-slate-900;
-  @apply sm:text-xl sm:leading-7;
+  @apply text-2xl/8 text-slate-900;
 }
 
 h3 {
-  @apply text-xl leading-7 text-slate-900;
+  @apply text-xl/7 text-slate-900;
   @apply m-0 mb-4;
-  @apply sm:text-lg sm:leading-6;
 }
 
 h4 {
-  @apply text-lg leading-6 text-slate-900;
-  @apply sm:text-base sm:leading-5;
+  @apply text-lg/6 text-slate-900;
 }
 
 h5 {
-  @apply text-base leading-5 text-slate-900;
-  @apply sm:text-sm;
+  @apply text-base/5 text-slate-900;
 }
 
 h6 {
-  @apply text-base leading-5 text-slate-900 uppercase;
-  @apply sm:text-sm;
+  @apply text-base/5 text-slate-900 uppercase;
+}
+
+@screen sm {
+  h1 {
+    @apply !text-2xl/8;
+  }
+
+  h2 {
+    @apply !text-xl/7;
+  }
+
+  h3 {
+    @apply !text-lg/6;
+  }
+
+  h4 {
+    @apply !text-base/5;
+  }
+
+  h5 {
+    @apply !text-sm;
+  }
+
+  h6 {
+    @apply !text-sm;
+  }
 }
 
 p {
-  @apply text-base leading-6 text-slate-600;
+  @apply text-base/6 text-slate-600;
   @apply m-0 mb-8;
 }
 
@@ -47,12 +67,13 @@ ul, ol {
 }
 
 blockquote {
-  p {
-    @apply m-0 text-lg leading-7;
-  }
-
-  @apply [border-left:4px_solid_#6366f1];
   @apply m-0 mb-8 pl-4;
+  border-left: 4px solid #6366f1;
+
+}
+
+blockquote p {
+  @apply m-0 text-lg/7;
 }
 
 hr {
@@ -60,14 +81,12 @@ hr {
   @apply my-8;
 }
 
-img {
-  @apply max-w-full leading-full align-middle;
-  border: 0;
+a {
+  @apply text-blue-600 underline;
 }
 
-a {
-  @apply text-blue-600;
-  text-decoration: underline;
+img {
+  @apply max-w-full align-middle;
 }
 
 pre {

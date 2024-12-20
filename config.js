@@ -3,65 +3,46 @@
 | Development config                      https://maizzle.com/docs/environments
 |-------------------------------------------------------------------------------
 |
-| The exported object contains the default Maizzle settings for development.
-| This is used when you run `maizzle build` or `maizzle serve` and it has
-| the fastest build time, since most transformations are disabled.
+| This is the base configuration that Maizzle will use when you run commands
+| like `npm run build` or `npm run dev`. Additional config files will
+| inherit these settings, and can override them when necessary.
 |
 */
 
-const fm = require('front-matter')
-const shiki = require('shiki')
+import Shiki from '@shikijs/markdown-it'
+import markdownItAttrs from 'markdown-it-attrs'
 
-module.exports = {
-  baseURL: {
-    url: '/images/',
-    tags: ['img', 'source'],
-  },
+/** @type {import('@maizzle/framework').Config} */
+export default {
   build: {
-    templates: {
-      source: 'src/content',
-      filetypes: ['md'],
-      destination: {
-        path: 'build_local',
-      },
-      assets: {
-        source: 'src/images',
-        destination: 'images',
-      },
+    content: ['content/**/*.md'],
+    static: {
+      source: ['images/**/*.*'],
+      destination: 'images',
     },
   },
   markdown: {
+    markdownit: {
+      html: true,
+    },
     plugins: [
       {
-        plugin: require('markdown-it-attrs'),
-      }
+        plugin: await Shiki({
+          theme: 'tokyo-night',
+          langs: ['html', 'css', 'javascript', 'yaml'],
+        }),
+      },
+      {
+        plugin: markdownItAttrs,
+      },
     ]
   },
-  events: {
-    async beforeCreate(config) {
-      const highlighter = await shiki.getHighlighter({
-        theme: 'material-theme-palenight',
-      })
+  beforeRender({html, matter}) {
+    const layout = matter.layout || 'main'
 
-      config = Object.assign(config, {
-        markdown: {
-          markdownit: {
-            highlight: (code, lang) => {
-              lang = lang || 'html'
-              return highlighter.codeToHtml(code, { lang })
-            }
-          }
-        }
-      })
-    },
-    beforeRender(html) {
-      const { attributes, body } = fm(html)
-      const layout = attributes.layout || 'main'
-
-      return `
-        <x-${layout}>
-          <md>${body}</md>
-        </x-${layout}>`
-    }
-  },
+    return `
+      <x-${layout}>
+        <md>${html}</md>
+      </x-${layout}>`
+  }
 }
