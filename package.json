@@ -7,9 +7,9 @@
   },
   "dependencies": {
     "@maizzle/framework": "latest",
-    "@shikijs/markdown-it": "^1.24.3",
-    "markdown-it-attrs": "^4.3.0",
-    "shiki": "^1.24.3",
+    "@shikijs/markdown-it": "^3.7.0",
+    "markdown-it-attrs": "^4.3.1",
+    "shiki": "^3.7.0",
     "tailwindcss-preset-email": "latest"
   }
 }
